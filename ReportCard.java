@@ -13,7 +13,7 @@ public class ReportCard {
     /**
      * Constructs a new ReportCard with initial values from the Student object.
      */
-    public ReportCard(Student studentName) {
+    public ReportCard (String studentName) {
       mStudentName = studentName;
       mCalculusGrade = 0;
       mFrenchGrade = 0;        
