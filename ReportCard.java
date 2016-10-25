@@ -1,59 +1,92 @@
 /**
- * Displays text to the user.
+ * Displays grades for a specific student in each subject.  Assumes there exists a Student object with associated methods.
  */
-public class TextView extends View {
+public class ReportCard {
  
-    // String value
-    private String mText;
+    private Student mStudent;
+    private int mCalculusGrade;
+    private int mFrenchGrade;        
+    private int mHistoryGrade;
+    private int mChemistryGrade;
+    private int mEnglishLitGrade;
  
-    // Text color of the text
-    private int mTextColor;
+    /**
+     * Constructs a new ReportCard with initial values from the Student object.
+     */
+    public ReportCard(Student student) {
+      mStudent = student;
+      mStudentName = student.getName();
+      mCalculusGrade = mStudent.getCalculusGrade();
+      mFrenchGrade = mStudent.getFrenchGrade();        
+      mHistoryGrade  = mStudent.getHistoryGrade();
+      mChemistryGrade = mStudent.getChemistryGrade();
+      mEnglishLitGrade = mStudent.getEnglishLitGrade();     
+    }
+ 
+    /**
+     * Sets the grade for the student in each of the below subjects.
+     *
+     * @param grade is the updated int to be stored as the grade for that subject.
+     */
+    public void setCalculusGrade(int grade) {
+        mStudent.setCalculusGrade(grade);
+        mCalculusGrade = grade;
+    }
+ 
+    public void setFrenchGrade(int grade) {
+        mStudent.setFrenchGrade(grade);
+        mFrenchGrade = grade;
+    }
+
+    public void setHistoryGrade(int grade) {
+        mStudent.setHistoryGrade(grade);
+        mHistoryGrade = grade;
+    }
+
+    public void setChemistryGrade(int grade) {
+        mStudent.setChemistryGrade(grade);
+        mChemistryGrade = grade;
+    }
+
+    public void setEnglishLitGrade(int grade) {
+        mStudent.setEnglishLitGrade(grade);
+        mChemistryGrade = grade;
+    }
+ 
+    /**
+     * Gets the grade value for each of the below specific subjects.
+     *
+     * @return the grade for that subject.
+     */
     
-    // Context of the app
-    private Context mContext;
- 
-    /**
-     * Constructs a new TextView with initial values for text and text color.
-     */
-    public TextView(Context context) {
-      mText = "";
-      mTextColor = 0;
-      mContext = context;
+    public int getCalculusGrade() {
+        return mCalculusGrade;
     }
  
-    /**
-     * Sets the string value in the TextView.
-     *
-     * @param text is the updated string to be displayed.
-     */
-    public void setText(String text) {
-        mText = text;
+    public int getFrenchGrade() {
+        return mFrenchGrade;
+    }
+
+    public int getHistoryGrade() {
+        return mHistoryGrade;
+    }
+
+    public int getChemistryGrade() {
+        return mChemistryGrade;
+    }
+
+    public int getEnglishLitGrade() {
+        return mEnglishLitGrade;
     }
  
-    /**
-     * Sets the text color of the TextView.
-     *
-     * @param color of text to be displayed.
-     */
-    public void setTextColor(int color) {
-        mTextColor = color;
+    @Override
+    public String toString() {
+        return mStudentName + " received the following grades:\n" + 
+        "Calculus: " + mCalculusGrade +"%\n" + 
+        "French: " + mFrenchGrade +"%\n" +
+        "History: " + mHistoryGrade +"%\n" +
+        "Chemistry: " + mChemistryGrade +"%\n" +
+        "English Lit: " + mEnglishLitGrade +"%\n";
     }
- 
-    /**
-     * Gets the string value in the TextView.
-     *
-     * @return current text in the TextView.
-     */
-    public String getText() {
-        return mText;
-    }
- 
-    /**
-     * Gets the text color of the TextView.
-     *
-     * @return current text color.
-     */
-    public int getTextColor() {
-        return mTextColor;
-    }
+
 }
