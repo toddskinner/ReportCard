@@ -1,9 +1,9 @@
 /**
- * Displays grades for a specific student in each subject.  Assumes there exists a Student object with associated methods.
+ * Displays grades for a specific student in each subject. 
  */
 public class ReportCard {
  
-    private Student mStudent;
+    private String mStudentName;
     private int mCalculusGrade;
     private int mFrenchGrade;        
     private int mHistoryGrade;
@@ -13,14 +13,13 @@ public class ReportCard {
     /**
      * Constructs a new ReportCard with initial values from the Student object.
      */
-    public ReportCard(Student student) {
-      mStudent = student;
-      mStudentName = student.getName();
-      mCalculusGrade = mStudent.getCalculusGrade();
-      mFrenchGrade = mStudent.getFrenchGrade();        
-      mHistoryGrade  = mStudent.getHistoryGrade();
-      mChemistryGrade = mStudent.getChemistryGrade();
-      mEnglishLitGrade = mStudent.getEnglishLitGrade();     
+    public ReportCard(Student studentName) {
+      mStudentName = studentName;
+      mCalculusGrade = 0;
+      mFrenchGrade = 0;        
+      mHistoryGrade  = 0;
+      mChemistryGrade = 0;
+      mEnglishLitGrade = 0;     
     }
  
     /**
@@ -29,27 +28,22 @@ public class ReportCard {
      * @param grade is the updated int to be stored as the grade for that subject.
      */
     public void setCalculusGrade(int grade) {
-        mStudent.setCalculusGrade(grade);
         mCalculusGrade = grade;
     }
  
     public void setFrenchGrade(int grade) {
-        mStudent.setFrenchGrade(grade);
         mFrenchGrade = grade;
     }
 
     public void setHistoryGrade(int grade) {
-        mStudent.setHistoryGrade(grade);
         mHistoryGrade = grade;
     }
 
     public void setChemistryGrade(int grade) {
-        mStudent.setChemistryGrade(grade);
         mChemistryGrade = grade;
     }
 
     public void setEnglishLitGrade(int grade) {
-        mStudent.setEnglishLitGrade(grade);
         mChemistryGrade = grade;
     }
  
